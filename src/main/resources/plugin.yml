@@ -1,0 +1,9 @@
+name: FeatherDeathMessage
+version: '${project.version}'
+main: com.zerek.featherdeathmessage.FeatherDeathMessage
+api-version: 1.17
+authors: [ Zerek ]
+description: Custom death messages and death message permission nodes
+commands:
+  lastdeath:
+    description: Display a player's (your own) most recent death
