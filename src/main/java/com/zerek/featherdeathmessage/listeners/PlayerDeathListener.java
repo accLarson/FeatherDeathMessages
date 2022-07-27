@@ -34,7 +34,7 @@ public class PlayerDeathListener implements Listener {
             String y = String.valueOf(player.getLocation().getBlockY());
             String z = String.valueOf(player.getLocation().getBlockZ());
             String world = player.getWorld().getName();
-            Component message = MiniMessage.miniMessage().deserialize(deathCoordsMessage, Placeholder.unparsed("world", event.getPlayer().getWorld().getName()), Placeholder.unparsed("x", x), Placeholder.unparsed("y", y), Placeholder.unparsed("z", z));
+            Component message = MiniMessage.miniMessage().deserialize(deathCoordsMessage, Placeholder.unparsed("world", world), Placeholder.unparsed("x", x), Placeholder.unparsed("y", y), Placeholder.unparsed("z", z));
             player.sendMessage(message);
             plugin.getDeathManager().storeDeath(event.getPlayer(), GsonComponentSerializer.gson().serialize(message));
         }
