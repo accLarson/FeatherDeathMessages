@@ -6,9 +6,6 @@ import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import net.kyori.adventure.text.serializer.gson.GsonComponentSerializer;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
-import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -26,7 +23,7 @@ public class PlayerDeathListener implements Listener {
     }
 
     @EventHandler
-    public void onEntityDamageByEntity(PlayerDeathEvent event){
+    public void onPlayerDeath(PlayerDeathEvent event){
 
         if (event.getPlayer().hasPermission("feather.deathmessage.coords")) {
             Player player = event.getEntity();
