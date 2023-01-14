@@ -30,4 +30,9 @@ public class DeathManager {
         Death death = Death.findById(offlinePlayer.getUniqueId().toString());
         return (String) death.get("location");
     }
+
+    public long getDeathDate (OfflinePlayer offlinePlayer){
+        Death death = Death.findById(offlinePlayer.getUniqueId().toString());
+        return death.getLong("updated_at");
+    }
 }
