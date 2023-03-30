@@ -6,7 +6,7 @@
 
     <groupId>com.zerek</groupId>
     <artifactId>FeatherDeathMessage</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <packaging>jar</packaging>
 
     <name>FeatherDeathMessage</name>
@@ -87,7 +87,7 @@
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>activejdbc</artifactId>
-            <version>3.1-j11</version>
+            <version>3.4-j11</version>
         </dependency>
     </dependencies>
 </project>

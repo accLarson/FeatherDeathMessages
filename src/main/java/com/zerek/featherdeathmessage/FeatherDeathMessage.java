@@ -18,7 +18,6 @@ public final class FeatherDeathMessage extends JavaPlugin {
     @Override
     public void onEnable() {
         saveDefaultConfig();
-        logger = Logger.getLogger("Minecraft");
         databaseManager = new DatabaseManager(this);
         deathManager = new DeathManager(this);
         getServer().getPluginManager().registerEvents(new PlayerDeathListener(this), this);
@@ -30,9 +29,6 @@ public final class FeatherDeathMessage extends JavaPlugin {
         // Plugin shutdown logic
     }
 
-    public Logger getLog(){
-        return logger;
-    }
     public DeathManager getDeathManager() {
         return deathManager;
     }
