@@ -27,7 +27,7 @@ public class DatabaseManager {
                 this.initConnection();
             }
         } catch (SQLException e) {
-            plugin.getLog().severe("[FeatherDeathMessages] Unable to receive connection.");
+            plugin.getLogger().severe("Unable to receive connection.");
         }
         return connection;
     }
@@ -38,7 +38,7 @@ public class DatabaseManager {
                 Base.close();
                 connection.close();
             } catch (SQLException e) {
-                plugin.getLog().severe("[FeatherDeathMessages] Unable to close DatabaseManager connection.");
+                plugin.getLogger().severe("Unable to close DatabaseManager connection.");
             }
         }
     }
@@ -53,7 +53,7 @@ public class DatabaseManager {
             this.connection = DriverManager.getConnection("jdbc:sqlite:" + this.file.getAbsolutePath());
             Base.attach(this.connection);
         } catch (SQLException e) {
-            plugin.getLog().severe("[FeatherDeathMessages] Unable to initialize DatabaseManager connection.");
+            plugin.getLogger().severe("Unable to initialize DatabaseManager connection.");
         }
     }
 
@@ -66,14 +66,14 @@ public class DatabaseManager {
                 return false;
             }
         } catch (SQLException e) {
-            plugin.getLog().severe("[FeatherDeathMessages] Unable to query table metadata.");
+            plugin.getLogger().severe("Unable to query table metadata.");
             return false;
         }
     }
 
     private void initTables() {
         if(!this.existsTable("DEATHS")) {
-            plugin.getLog().info("[FeatherDeathMessages] Creating DEATHS table.");
+            plugin.getLogger().info("Creating DEATHS table.");
             String query = "CREATE TABLE IF NOT EXISTS `DEATHS` ("
                     + " `mojang_uuid`               VARCHAR(255) PRIMARY KEY NOT NULL, "
                     + " `updated_at`                DATETIME, "
@@ -84,7 +84,7 @@ public class DatabaseManager {
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
-                plugin.getLog().severe("[FeatherDeathMessages] Unable to create DEATHS table.");
+                plugin.getLogger().severe("Unable to create DEATHS table.");
             }
         }
     }
