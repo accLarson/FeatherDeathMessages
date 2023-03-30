@@ -1,6 +1,6 @@
-package com.zerek.featherdeathmessage.listeners;
+package dev.zerek.featherdeathmessage.listeners;
 
-import com.zerek.featherdeathmessage.FeatherDeathMessage;
+import dev.zerek.featherdeathmessage.FeatherDeathMessage;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;

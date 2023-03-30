@@ -1,9 +1,9 @@
-package com.zerek.featherdeathmessage;
+package dev.zerek.featherdeathmessage;
 
-import com.zerek.featherdeathmessage.commands.LastDeathCommand;
-import com.zerek.featherdeathmessage.listeners.PlayerDeathListener;
-import com.zerek.featherdeathmessage.managers.DatabaseManager;
-import com.zerek.featherdeathmessage.managers.DeathManager;
+import dev.zerek.featherdeathmessage.commands.LastDeathCommand;
+import dev.zerek.featherdeathmessage.listeners.PlayerDeathListener;
+import dev.zerek.featherdeathmessage.managers.DatabaseManager;
+import dev.zerek.featherdeathmessage.managers.DeathManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 

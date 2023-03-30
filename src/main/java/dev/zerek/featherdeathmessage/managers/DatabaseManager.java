@@ -1,6 +1,6 @@
-package com.zerek.featherdeathmessage.managers;
+package dev.zerek.featherdeathmessage.managers;
 
-import com.zerek.featherdeathmessage.FeatherDeathMessage;
+import dev.zerek.featherdeathmessage.FeatherDeathMessage;
 import org.javalite.activejdbc.Base;
 
 import java.io.File;

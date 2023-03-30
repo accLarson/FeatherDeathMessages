@@ -1,7 +1,7 @@
-package com.zerek.featherdeathmessage.managers;
+package dev.zerek.featherdeathmessage.managers;
 
-import com.zerek.featherdeathmessage.FeatherDeathMessage;
-import com.zerek.featherdeathmessage.data.Death;
+import dev.zerek.featherdeathmessage.FeatherDeathMessage;
+import dev.zerek.featherdeathmessage.data.Death;
 import org.bukkit.OfflinePlayer;
 
 

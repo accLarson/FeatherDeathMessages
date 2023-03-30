@@ -1,6 +1,6 @@
-package com.zerek.featherdeathmessage.commands;
+package dev.zerek.featherdeathmessage.commands;
 
-import com.zerek.featherdeathmessage.FeatherDeathMessage;
+import dev.zerek.featherdeathmessage.FeatherDeathMessage;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.serializer.gson.GsonComponentSerializer;

@@ -1,4 +1,4 @@
-package com.zerek.featherdeathmessage.data;
+package dev.zerek.featherdeathmessage.data;
 
 import org.javalite.activejdbc.Model;
 import org.javalite.activejdbc.annotations.IdName;
