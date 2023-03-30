@@ -6,21 +6,25 @@ import com.zerek.featherdeathmessage.managers.DatabaseManager;
 import com.zerek.featherdeathmessage.managers.DeathManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.logging.Logger;
 
 public final class FeatherDeathMessage extends JavaPlugin {
 
-    private static Logger logger;
     private DatabaseManager databaseManager;
+
     private DeathManager deathManager;
 
 
     @Override
     public void onEnable() {
+
         saveDefaultConfig();
+
         databaseManager = new DatabaseManager(this);
+
         deathManager = new DeathManager(this);
+
         getServer().getPluginManager().registerEvents(new PlayerDeathListener(this), this);
+
         this.getCommand("lastdeath").setExecutor(new LastDeathCommand(this));
     }
 
