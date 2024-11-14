@@ -1,7 +1,7 @@
 name: FeatherDeathMessage
 version: '${project.version}'
 main: dev.zerek.featherdeathmessage.FeatherDeathMessage
-api-version: 1.19
+api-version: 1.21
 authors: [ Zerek ]
 description: Custom death messages and death message permission nodes
 commands:
