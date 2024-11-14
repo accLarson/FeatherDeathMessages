@@ -15,13 +15,14 @@ public class PlayerDeathListener implements Listener {
 
     private final FeatherDeathMessage plugin;
 
+    String deathNoticeMessage;
     String deathCoordsMessage;
 
     public PlayerDeathListener(FeatherDeathMessage plugin) {
 
         this.plugin = plugin;
-
-        deathCoordsMessage = plugin.getConfig().getString("death-coords");
+        this.deathNoticeMessage = this.plugin.getConfig().getString("death-notice");
+        this.deathCoordsMessage = this.plugin.getConfig().getString("death-coords");
     }
 
     @EventHandler
@@ -30,24 +31,17 @@ public class PlayerDeathListener implements Listener {
         if (event.getPlayer().hasPermission("feather.deathmessage.coords")) {
 
             Player player = event.getEntity();
-
             String x = String.valueOf(player.getLocation().getBlockX());
-
             String y = String.valueOf(player.getLocation().getBlockY());
-
             String z = String.valueOf(player.getLocation().getBlockZ());
-
             String world = player.getWorld().getName();
+            Component coordsMessage = MiniMessage.miniMessage().deserialize(deathCoordsMessage, Placeholder.unparsed("world", world), Placeholder.unparsed("x", x), Placeholder.unparsed("y", y), Placeholder.unparsed("z", z));
+            plugin.getDeathManager().storeDeath(event.getPlayer(), GsonComponentSerializer.gson().serialize(coordsMessage));
 
-            Component message = MiniMessage.miniMessage().deserialize(deathCoordsMessage, Placeholder.unparsed("world", world), Placeholder.unparsed("x", x), Placeholder.unparsed("y", y), Placeholder.unparsed("z", z));
-
-            player.sendMessage(message);
-
-            plugin.getDeathManager().storeDeath(event.getPlayer(), GsonComponentSerializer.gson().serialize(message));
+            player.sendMessage(MiniMessage.miniMessage().deserialize(deathNoticeMessage));
         }
 
         if (event.getEntity().hasPermission("feather.deathmessage.silent")) event.deathMessage(null);
-
         else event.deathMessage(Component.text("• ").color(TextColor.fromHexString("#ffffff")).append(event.deathMessage().color(TextColor.fromHexString("#b98863"))));
     }
 }
